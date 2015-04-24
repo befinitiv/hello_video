@@ -1,0 +1,11 @@
+Modified version of Raspbians "hello_video" program. Originally the program plays back raw .h264 files via an OMX pipeline. My modifications target the playback of live video streams. Therefore, I read h264 data directly from stdin and set the framerate to 60fps so that the input data is consumed faster that it is delivered (and pipelines are as empty as possible)
+
+Under Raspian replace the file /opt/vc/src/hello_pi/hello_video/video.c with the file supplied in this repository.
+
+
+Build the tool with /opt/vc/src/hello_pi/rebuild.sh
+
+Test the tool like this:
+
+cd /opt/vc/src/hello_pi/hello_video/
+./hello_video.bin < test.h264
